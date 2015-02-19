@@ -10,6 +10,10 @@ var SongQueueView = Backbone.View.extend({
       this.render();
     }, this);
 
+    this.collection.on('dequeue', function(){
+      this.render();
+    }, this);
+
   },
 
   //render: function() {           ORIGINAL FROM REPO

@@ -4,31 +4,30 @@ var SongQueue = Songs.extend({
   initialize: function(){
     //this.playFirst(); // KATE
 
-
     this.on('enqueue', this.enqueue, this);
-    this.on('enqueue', this.playFirst, this);
+    //this.on('enqueue', this.playFirst, this);
+    this.on('dequeue', this.dequeue, this);
+    this.on('ended', this.dequeue, this);
+    this.on('ended', this.playFirst, this);
   },
+
   playFirst: function(){
-    console.log(this.at(0));
-    // if (this.at(0)) {
     if (this.at(0)) {
-      var song = this.at(0);
-      song.play();
-      //this.model.play();
-      this.dequeue();
+      this.at(0).play();
     }
-
-      // this.model.dequeue()
-    // if it does not exist, do nothing
-
   },
+
   enqueue: function(song) {
     this.push(song);
+    if (this.length === 1) {
+      this.playFirst();
+    }
   },
 
   dequeue: function(song) {
     this.remove(song);
   }
+
 
 
 

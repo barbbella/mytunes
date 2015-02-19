@@ -7,7 +7,7 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      this.model.enqueue(); // KATE changed from play
+      this.model.enqueue();
     }
   },
 
