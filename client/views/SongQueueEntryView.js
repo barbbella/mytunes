@@ -6,12 +6,11 @@ var SongQueueEntryView = Backbone.View.extend({
 
   template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'), // same as libraryentryview
 
-  // CODE BELOW FROM LIBRARYENTRYVIEW
-  //events: {
-  //  'click': function() {
-  //    this.model.play();
-  //  }
-  //},
+  events: {                    // same as libraryentryview
+    'click': function() {
+      this.model.enqueue();             // KATE
+    }
+  },
 
   render: function(){
     return this.$el.html(this.template(this.model.attributes));  // same as libraryentryview
