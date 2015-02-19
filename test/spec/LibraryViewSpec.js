@@ -27,7 +27,7 @@ describe("LibraryView", function() {
 
   it("should have a header element after being rendered", function(){
     view = new LibraryView({collection: fakeSongs});
-    expect(view.$el.children().length).to.equal(2);
+    expect(view.$el.children().length).to.equal(3);  // KATE changed test from 2 to 3 because 1 element was the header & two songs added
     expect(view.$el.children()[0].tagName).to.equal('TH');
   });
 });
