@@ -13,11 +13,9 @@ var CurrentlyPlayingView = Backbone.View.extend({
     this.render();
   },
 
-  template: _.template('<h2>(<%= artist %>)</h2><h2><%= title %></h2>'),
+  template: _.template('<i>Now playing: <%= artist %> - <%= title %></i>'),
 
   render: function(){
-    console.log(this);
-    console.log(this.model);
     return this.$el.html(this.template(this.model.attributes));
   }
 
