@@ -1,7 +1,7 @@
 
 body {
     background: lightgray;
-    background-image: url("background.jpg");
+    background-image: url("images/background.jpg");
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -28,6 +28,16 @@ h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
+h2 {
+    font-size: large;
+}
+
+h3 {
+    font-size: medium;
+}
+
 audio {
     font-family: 'Montserrat', sans-serif;
 }
+
+img
