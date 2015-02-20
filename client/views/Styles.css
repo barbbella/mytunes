@@ -19,7 +19,7 @@ td:hover {
 }
 
 div {
-    padding: 15px;
+    padding: 0 15px;
 }
 
 h1 {
@@ -40,4 +40,10 @@ audio {
     font-family: 'Montserrat', sans-serif;
 }
 
-img
+input {
+    margin: 10px;
+}
+
+#votesCounter {
+    display: inline;
+}

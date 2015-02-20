@@ -19,7 +19,7 @@ var CurrentlyPlayingView = Backbone.View.extend({
     var count = this.model.playCount();
     var vote = this.model.votes();
     return this.$el.html(this.template(this.model.attributes)
-      + '<h3>Play Count: ' + count + ' Votes: ' + vote + '</h3>'
+      + '<h3>Play Count: ' + count + '</h3>'
     );
   }
 
