@@ -1,26 +1,18 @@
 // SongQueueView.js - Defines a backbone view class for the song queue.
 var SongQueueView = Backbone.View.extend({
 
-  tagName: "queueTable",      // Kate: added tagName, updated libraryTable name
+  tagName: "table",
 
   initialize: function() {
-    this.render();            // Kate
+    this.render();
 
-    this.collection.on('enqueue', function(){
-      this.render();
-    }, this);
-
-    this.collection.on('dequeue', function(){
+    this.collection.on('add remove', function(){
+      console.log("check");
       this.render();
     }, this);
 
   },
 
-  //render: function() {           ORIGINAL FROM REPO
-  //  return this.$el;
-  //}
-
-  // CODE BELOW FROM LIBRARYVIEW
   render: function(){
     // to preserve event handlers on child nodes, we must call .detach() on them before overwriting with .html()
     // see http://api.jquery.com/detach/
