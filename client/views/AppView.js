@@ -3,6 +3,7 @@ var AppView = Backbone.View.extend({
 
   initialize: function(params){
     this.playerView = new PlayerView({model: this.model.get('currentSong')});
+    this.currentlyPlayingView = new CurrentlyPlayingView({model: this.model.get('currentSong')});
     this.songQueueView = new SongQueueView({collection: this.model.get('songQueue')}); // KATE
     this.libraryView = new LibraryView({collection: this.model.get('library')});
 
@@ -10,6 +11,7 @@ var AppView = Backbone.View.extend({
     // ONLY receive change events for the specific property, 'currentSong'
     this.model.on('change:currentSong', function(model){
       this.playerView.setSong(model.get('currentSong'));
+      this.currentlyPlayingView.setSong(model.get('currentSong'));
     }, this);
 
   },
@@ -17,6 +19,7 @@ var AppView = Backbone.View.extend({
   render: function(){
     return this.$el.html([
       this.playerView.$el,
+      this.currentlyPlayingView.$el,
       this.songQueueView.$el,
       this.libraryView.$el
     ]);
