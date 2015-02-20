@@ -1,6 +1,7 @@
 
 body {
     background: lightgray;
+    background-image: url("background.jpg");
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -14,7 +15,7 @@ th {
 }
 
 td:hover {
-    color: red;
+    color: blueviolet;
 }
 
 div {
@@ -22,7 +23,7 @@ div {
 }
 
 h1 {
-    color: #1e2d4d;
+    color: whitesmoke;
     font-style: italic;
     font-family: 'Montserrat', sans-serif;
 }

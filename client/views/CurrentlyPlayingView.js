@@ -16,7 +16,12 @@ var CurrentlyPlayingView = Backbone.View.extend({
   template: _.template('<i>Now playing: <%= artist %> - <%= title %></i>'),
 
   render: function(){
-    return this.$el.html(this.template(this.model.attributes));
+    var count = this.model.playCount();
+    var vote = this.model.votes();
+    return this.$el.html(this.template(this.model.attributes)
+      + '<br><br><i>Play Count: ' + count + ' Votes: ' + vote + '</i>'
+
+    );
   }
 
 });
